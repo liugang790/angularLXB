@@ -1,0 +1,16 @@
+<div class="bind_account_master" popup-wrap>
+    <div class="bind_account_wrap">
+        <div class="account_row box">
+            <p class="border_right">86<i class="vertical_middle to_bottom_icon"></i></p>
+            <p><input type="text" placeholder="请输入手机号" ng-model="phone"></p>
+            <p class="get_yz_code" ng-click="time_out()"><a href="javascript:;">{{verifiticationCode}}</a></p>
+        </div>
+        <div class="account_row box">
+            <p>验证码</p>
+            <p><input type="text" placeholder="请输入验证码" ng-model="captcha"></p>
+        </div>
+    </div>
+    <p class="center mg_05">
+        <a href="javascript:;"  ng-click="join()"  class="sureBtn">查看入驻状态</a>
+    </p>
+</div>

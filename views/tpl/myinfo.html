@@ -1,0 +1,12 @@
+<div class="myinfo">
+    <form action="" id="head" name="head" enctype="multipart/form-data" method="post">
+        <ul>
+            <li><div>头像</div><div class="head_img" update-nick-icon><img ng-src="{{userInfo.head}}" class="pic"><i class="vertical_middle to_left_icon"></i><input type="file" name="nickIcon" id="nickIcon"></div></li>
+            <li><span>昵称</span><span class="fontcolor">{{userInfo.nickname}}</span></li>
+            <li><span>性别</span><span class="fontcolor">{{userInfo.gender}}</span></li>
+            <li><span>年龄</span><span class="fontcolor">{{userInfo.age}}</span></li>
+            <li><div>手机</div><div class="head_img fontcolor">{{userInfo.phone}} <a href="#/bindphone">换绑</a><i class="vertical_middle to_left_icon"></i></div></li>
+        </ul>
+    </form>
+    <div class="sure_cancle" select><a href="#/restmyinfo">修改</a></div>
+</div>

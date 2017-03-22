@@ -1,0 +1,17 @@
+<div class="messagecenter">
+    <ul>
+        <li ng-repeat="item in messageList">
+            <a ng-href="#/messcendetail?id={{item.id}}" ng-click="isNew()">
+            <p>{{item.type}}：{{item.title}}<span ng-show="{{item.is_new}}">NEW</span></p>
+            <p>{{item.createtime}}</p>
+            <p>{{item.content}}</p>
+            </a>
+        </li>
+    </ul>
+    <div ng-show="noData">
+        <p class="noData">没有系统消息</p>
+    </div>
+    <div class="master_order_cancle" ng-show="isLoadDisplay">
+        <a href="javascript:;" ng-bind="loadText" ng-click="loadingFn()">加载更多</a>
+    </div>
+</div>

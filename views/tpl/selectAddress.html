@@ -1,0 +1,15 @@
+<div class="select_address" select-address>
+    <div class="select_address_row" ng-repeat="item in addressList">
+        <a class="select_address_info" ng-click="selectAdr(item.id)">
+            <p class="flex">
+                <span>{{item.name}}</span><span>{{item.phone}}</span>
+            </p>
+            <p class="address_content">{{item.detail}}</p>
+            <p class="address_content">{{item.address}}</p>
+        </a>
+        <div class="select_address_btnRow flex">
+            <p ng-click="defaultFn()"><i ng-class="item.selected"></i><sapn class="vertical_middle">设为默认地址</sapn> <input type="radio" name="defaultAdr" class="select_address_checkbox"></p>
+            <p><a ng-href="#/commentAddress?id={{item.id}}">编辑</a><a href="javascript:;" ng-click="deleteAdr()">删除</a></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="order_add">
+    <form action="" id="addOrder" name="addOrder" enctype="multipart/form-data" method="post">
+        <section class="order_add_row">
+            <div class="flex">
+                <h2>预约时间</h2>
+                <p><a href="#/selectTime">{{timeSelect}}</a></p>
+            </div>
+            <div class="flex" ng-hide="is_address">
+                <h2>维修地点</h2>
+                <div>
+                    <p class="single_wrap"><a href="#/selectSitus" ng-bind="detail"></a></p>
+                    <p><input type="text" placeholder="请填写您的详细地址" ng-model="writeAddress"></p>
+                </div>
+            </div>
+            <div class="flex" ng-hide="is_address">
+                <h2>联系人</h2>
+                <div>
+                    <p><input type="text" placeholder="请填写您的姓名" ng-model="name"></p>
+                    <p><input type="text" placeholder="请填写您的手机号码" ng-model="phone"></p>
+                </div>
+            </div>
+            <div class="flex" ng-show="is_address">
+                <h2>联系方式</h2>
+                <div>
+                    <p  ng-bind="addressDetails"></p>
+                    <p ng-bind="detail"></p>
+                    <p ng-bind="user"></p>
+                    <p class="has_address_btn"><a href="#/selectAddress">常用地址选择</a><a href="#/commentAddress">使用新地址</a></p>
+                </div>
+            </div>
+            <div class="flex">
+                <h2>备注</h2>
+                <div>
+                    <p><input type="text" ng-model="remark" placeholder="备注信息，可不填写" style="font-size:.45rem"></p>
+                </div>
+            </div>
+        </section>
+        <section class="order_addImg_row">
+            <div class="img_info">
+                <h2>上传图片说明</h2>
+                <p>（便于师傅提前了解情况，可不传）</p>
+            </div>
+            <div class="img_content" add-img>
+                <ul class="clearfix">
+                    <li class="add_img_btnRow">
+                        <i class="add_img_icon"></i>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="order_btn_row">
+            <a href="javascript:;" class="sureBtn" ng-click="submitOrder()" ng-bind="send_text">确认下单</a>
+        </div>
+    </form>
+    <div class="bind_account" ng-show="is_bindPhone">
+        <div class="bind_account_wrap">
+            <div class="account_row box">
+                <p class="border_right">86<i class="vertical_middle to_bottom_icon"></i></p>
+                <p><input type="text" placeholder="请输入手机号" ng-model="phone"></p>
+                <p class="get_yz_code" ng-click="time_out()"><a href="javascript:;">{{verifiticationCode}}</a></p>
+            </div>
+            <div class="account_row box">
+                <p>验证码</p>
+                <p><input type="text" placeholder="请输入验证码" ng-model="captcha"></p>
+            </div>
+        </div>
+        <p class="account_explain">本页面仅首次下单时候需要绑定手机号码至微信，下次下单将自动调取该手机号码作为绑定手机，无需再次绑定即可下单成功。</p>
+        <p class="center">
+            <a href="javascript:;" class="sureBtn"  ng-click="bindPhone()" ng-bind="send_text_bind">确认绑定并下单</a>
+        </p>
+    </div>
+</div>

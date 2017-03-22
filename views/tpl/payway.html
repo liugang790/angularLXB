@@ -1,0 +1,42 @@
+<div class="payway" select-pay-type>
+    <div class="payway_way">
+        <div class="online_pay">
+            <div class="wxpay">
+                <p>在线支付</p>
+            </div>
+            <div class="tabbar">
+                <i ng-class="item.selected" class="select_address_defaultBtn"></i>
+                <input type="radio" name="pay_type" value="2" checked id="wx_pay_row" class="select_address_checkbox">
+            </div>
+        </div>
+        <div class="online_pay_select">
+            <div class="online_btn_row">
+                <i ng-class="item.selected" class="pay_defaultBtn"></i>
+                <span class="use_money">使用维修币</span>
+                <input type="checkbox" name="defaultAdr" id="wx_gold" checked class="select_address_checkbox">
+            </div>
+            <div class="save_money"><input  type="number" name="money" ng-model="repair_gold" id="put_gold" ng-change="changeInputGold()">币<span>当前维修币余额为<strong ng-bind="repairGoldTold"></strong>币</span></div>
+        </div>
+        <div class="online_pay_select">
+            <div class="online_btn_row">
+                <i ng-class="item.selected" class="pay_defaultBtn"></i>
+                <span class="use_money">微信在线支付</span>
+                <input type="checkbox" name="defaultAdr" id="wx_line" checked class="select_address_checkbox">
+            </div>
+            <div class="save_money dtcolor">维修币已抵扣<dt ng-bind="repair_gold.toFixed(2)"></dt>元，还需支付￥<dt ng-bind="(order_total_price - repair_gold).toFixed(2)"></dt></div>
+        </div>
+    </div>
+    <div class="cash_pay">
+        <div class="online_pay">
+            <div class="wxpay">
+                <p>现金支付</p>
+            </div>
+            <div class="tabbar">
+                <i ng-class="item.selected" class="address_defaultBtn"></i>
+                <input type="radio" name="pay_type" value="0" class="select_address_checkbox">
+            </div>
+        </div>
+    </div>
+    <p class="commonp">支付完成后评价并完成分享可获得2维修币</p>
+    <div class="sure_cancle" select><a href="javascript:;" ng-click="pay()" ng-bind="pay_text">确认并进行支付</a></div>
+</div>

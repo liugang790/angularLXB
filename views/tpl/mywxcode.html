@@ -1,0 +1,26 @@
+<div class="mywxcode">
+    <div class="mywxcode_head">
+        <p>剩余维修币（元）</p>
+        <p class="wx_money"><span class="money" ng-bind="repairCode"></span><a href="#/buycode" class="buy">购买维修币</a></p>
+    </div>
+    <p class="fp">修币变动明细</p>
+    <div>
+        <ul>
+            <li ng-repeat="item in buyCodeUseList">
+                <div>
+                    <p class="service_fee"><span ng-bind="item.title"></span></p>
+                    <p class="service_time"><span class="way" ng-bind="item.codeType"></span><span>{{item.createtime}}</span></p>
+                </div>
+                <div class="way_money" ng-class="item.priceStyle">
+                    {{item.repair_gold}}
+                </div>
+            </li>
+            <li ng-show="noData">
+                <p class="noData">暂无使用明细</p>
+            </li>
+        </ul>
+        <div class="master_order_cancle" ng-show="isLoadDisplay">
+            <a href="javascript:;" ng-bind="loadText" ng-click="loadingFn()">加载更多</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="master_order">
+    <div class="master_order_num">
+        <a class="master_order_pic" href="javascript:;">
+            <img src="/weixin/images/tx1.png">
+        </a>
+        <div class="master_order_mess share_order_mess">
+            <p class="mess_top">
+                <span>率修邦(www.shuaixiubang.com)<br> 全球率先的家庭维修分享经济服务平台</span>
+            </p>
+            <p class="mess_mediu">微信公众号关注"率修邦"<br>专业师傅即刻上门为您排忧解难</p>
+        </div>
+    </div>
+    <div class="master_order_detail">
+        <p>订单跟踪</p>
+        <div class="order_time" ng-repeat="list in orderDetail.lists">
+            <div class="order_gz flex"><span>{{list.createtime}}</span><span class="order_success">{{list.content}}</span></div>
+        </div>
+        <p>订单详情</p>
+        <ul>
+            <li>
+                <span>预约时间</span>
+                <span class="dt" ng-bind="orderDetail.time"></span>
+            </li>
+            <li>
+                <span>服务类别</span>
+                <span class="dt" ng-bind="orderDetail.category_names">管道维修 管道疏通</span>
+            </li>
+            <li>
+                <span>服务地址</span>
+                <div class="dt">
+                    <p ng-bind="orderDetail.address.address"></p>
+                    <p ng-bind="orderDetail.address.detail"></p>
+                </div>
+            </li>
+            <li>
+                <span>服务价格</span>
+                <div class="dt">
+                    <spqn>{{orderDetail.display_fee}}</spqn>
+
+                </div>
+            </li>
+            <li>
+                <span>备注</span>
+                <div class="dt">
+                    <p ng-bind="orderDetail.remark"></p>
+                    <p class="remark_img_list"><span ng-repeat="item in orderDetail.images"><img ng-src="{{item.smallUrl}}" alt=""></span></p>
+                </div>
+            </li>
+        </ul>
+        <p ng-show="comment_display">评价详情</p>
+        <div class="comment_wrap" ng-show="comment_display">
+            <p class="comment_content" ng-bind="orderDetail.comment.content"></p>
+            <div class="comment_images_list">
+                <img ng-src="{{item.smallUrl}}" alt="" ng-repeat="item in orderDetail.comment.images">
+            </div>
+            <p class="star_score">
+                <i ng-repeat="item in orderDetail.starList track by $index" ng-class="item"></i>
+            </p>
+        </div>
+    </div>
+</div>

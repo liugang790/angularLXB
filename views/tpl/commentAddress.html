@@ -1,0 +1,29 @@
+<div class="comment_address">
+    <div class="input_wrap">
+        <div class="comment_address_row clearfix">
+            <h3 class="left">地址</h3>
+            <p class="right icon_right_adrCom"><a href="#/selectSitus" class="comment_select_a" ng-bind="addressDetails"></a></p>
+        </div>
+        <div class="comment_address_row clearfix">
+            <p class="right"><input type="text" placeholder="请填写详细地址" ng-model="detail"></p>
+        </div>
+        <div class="comment_address_row clearfix">
+            <h3 class="left">联系人</h3>
+            <p class="right"><input type="text" placeholder="请输入联系人姓名" ng-model="name"></p>
+        </div>
+        <div class="comment_address_row clearfix">
+            <h3 class="left">电话</h3>
+            <p class="right"><input type="text" placeholder="请输入联系人电话" ng-model="phone"></p>
+        </div>
+    </div>
+    <div class="comment_address_btn">
+        <p>
+            <i class="address_defaultBtn"></i>
+            <span class="vertical_middle">设为默认地址</span>
+            <input type="checkbox" class="select_address_checkbox">
+        </p>
+        <p>
+            <a href="javascript:;" class="sureBtn" ng-click="addAddress()">保存</a>
+        </p>
+    </div>
+</div>

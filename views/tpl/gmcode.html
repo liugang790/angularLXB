@@ -1,0 +1,18 @@
+<div class="canclepay" select-address>
+    <p>支付信息</p>
+    <div class="gmcode">
+        <p><span>产品类型：</span><span>{{packageDetail.repair_gold}}元维修币套餐</span></p>
+        <p><span>产品价格：</span><span>￥{{packageDetail.price}}</span></p>
+    </div>
+    <p>支付方式选择</p>
+    <div class="pay">
+        <div class="wxpay">
+            <p>微信在线支付</p>
+        </div>
+        <div class="tabbar">
+            <i ng-class="item.selected" class="select_address_defaultBtn"></i>
+            <input type="radio" name="defaultAdr" checked class="select_address_checkbox">
+        </div>
+    </div>
+    <div class="sure_cancle" select><a href="javascript:;" ng-click="buyCode()">确认并进行购买</a></div>
+</div>

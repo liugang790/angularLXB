@@ -1,0 +1,23 @@
+<div class="spendorder">
+    <ul>
+        <li ng-repeat="item in orderSpendList">
+            <div class="spand_time">
+                <p ng-bind="item.createtime"></p>
+                <p class="fsize fheight" ng-bind="item.timeHoure"></p>
+            </div>
+            <div>
+                <p ng-bind="item.title"></p>
+                <p class="fsizea fcolor fheight">单号: {{item.order_id}}</p>
+            </div>
+            <div class="spend_fee">
+                <span class="fmoncolor" ng-bind="item.fee"></span>
+            </div>
+        </li>
+        <li ng-show="noData">
+            <p class="noData">没有消费记录</p>
+        </li>
+    </ul>
+    <div class="master_order_cancle" ng-show="isLoadDisplay">
+        <a href="javascript:;" ng-bind="loadText" ng-click="loadingFn()">加载更多</a>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="servieDetail">
+   <div class="servieDetail_main" ng-repeat="item in masterComment">
+        <div class="servieDetail_left">
+            <img ng-src="{{item.user.head}}">
+        </div>
+        <div class="servieDetail_right">
+            <p class="font"><span>单号：</span><span ng-bind="item.order_id"></span></p>
+            <p class="message" ng-bind="item.content"></p>
+            <div class="comment_images_list">
+                <img ng-src="{{opt.smallUrl}}" alt="" ng-repeat="opt in item.images">
+            </div>
+            <p class="star_score">
+                <i ng-repeat="opt in item.starList track by $index" ng-class="opt"></i>
+            </p>
+        </div>
+    </div>
+    <div class="servieDetail_main" ng-show="noData">
+        <p class="noData">暂无评价</p>
+    </div>
+    <div class="master_order_cancle" ng-show="isLoadDisplay">
+        <a href="javascript:;" ng-bind="loadText" ng-click="loadingFn()">加载更多</a>
+    </div>
+</div>

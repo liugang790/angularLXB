@@ -1,0 +1,31 @@
+<div class="canclepay" select-address="">
+    <div class="canclepay_header">
+        <div class="teacher">
+            <i ng-class="item.selected" class="address_defaultBtn"></i>
+            <span>师傅原因</span>
+            <input type="radio" name="defaultAdr" value="1" class="select_address_checkbox">
+        </div>
+        <div class="user">
+            <i ng-class="item.selected" class="address_defaultBtn"></i>
+            <span>用户原因</span>
+            <input type="radio" name="defaultAdr" value="0" class="select_address_checkbox">
+        </div>
+    </div>
+    <div class="cancel_pay_textarea">
+        <p>
+            <textarea name="text" cols="15" maxlength="2000" ng-model="content"></textarea>
+        </p>
+    </div>
+    <p>确认取消订单选择支付方式</p>
+    <div class="pay">
+        <div class="wxpay">
+            <p>微信在线支付</p>
+        </div>
+        <div class="tabbar">
+            <i ng-class="item.selected" class="select_address_defaultBtn"></i>
+            <input type="radio" name="pay_type" checked="" class="select_address_checkbox">
+        </div>
+    </div>
+    <p style="border:none">因师傅已上门提供服务，该阶段取消订单需支付师傅上门费用￥30.00</p>
+    <div class="sure_cancle" select><a href="javasctipt:;" ng-click="sendAndPay()">确认取消订单并且支付违约款</a></div>
+</div>

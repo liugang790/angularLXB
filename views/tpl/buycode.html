@@ -1,0 +1,15 @@
+<div class="buycode">
+    <ul>
+        <li ng-repeat="item in buyCodeList">
+            <div class="buycode_left"><img ng-src="{{item.logo}}"></div>
+            <div class="buycode_right">
+                <p><span>{{item.repair_gold}}</span>维修币</p>
+                <p><span>优惠时间：</span><span>{{item.start}}-{{item.end}}</span></p>
+                <p><span>￥{{item.price}}</span><a ng-href="#/gmcode?id={{item.id}}">购买</a></p>
+            </div>
+        </li>
+        <li ng-show="noData">
+            <p class="noData">暂无维修币套餐</p>
+        </li>
+    </ul>
+</div>

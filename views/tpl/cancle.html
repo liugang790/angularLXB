@@ -1,0 +1,20 @@
+<div class="cancle_order" select-address="">
+<form>
+     <div class="cancle_order_head">
+		  <div class="teacher">
+			  <i ng-class="item.selected" class="address_defaultBtn"></i>
+			  <span>师傅原因</span>
+			  <input type="radio" name="defaultAdr" value="1" class="select_address_checkbox">
+		  </div>
+		  <div class="teacher">
+			  <i ng-class="item.selected" class="address_defaultBtn"></i>
+			  <span>用户原因</span>
+			  <input type="radio" name="defaultAdr" value="0" class="select_address_checkbox">
+		  </div>
+	  </div>
+	<div>
+	     <textarea name="content" maxlength="1500" ng-model="content"></textarea>
+	</div>
+	<div class="sure_cancle"><a href="javascript:;"  ng-click="canclebtn()">确认取消订单</a></div>
+</form>
+</div>

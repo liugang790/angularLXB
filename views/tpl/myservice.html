@@ -1,0 +1,29 @@
+<div class="myservice">
+    <div class="myservice_head">
+        <div><img ng-src="{{head.head}}"></div>
+        <div><span>{{length}}</span><span>已评价</span></div>
+    </div>
+    <div class="myservice_main">
+        <ul>
+            <li ng-repeat="list in lists">
+                <div><img ng-src="{{list.master.head}}"></div>
+                <div>
+                    <p><span>已评价</span><span>单号：</span><span>{{list.order_id}}</span></p>
+                    <p>{{list.content}}</p>
+                    <div class="comment_images_list">
+                        <img ng-src="{{opt.smallUrl}}" alt="" ng-repeat="opt in list.images">
+                    </div>
+                    <p class="star_score">
+                        <i ng-repeat="opt in list.starList track by $index" ng-class="opt"></i>
+                    </p>
+                </div>
+            </li>
+            <li ng-show="noData">
+                <p class="noData">没有评价记录</p>
+            </li>
+        </ul>
+        <div class="master_order_cancle" ng-show="isLoadDisplay">
+            <a href="javascript:;" ng-bind="loadText" ng-click="loadingFn()">加载更多</a>
+        </div>
+    </div>
+</div>

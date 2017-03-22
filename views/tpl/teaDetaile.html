@@ -1,0 +1,51 @@
+<div class="teacher_detaile">
+    <div class="header"><img ng-src="{{masterDetail.head}}"></div>
+    <p>基本信息</p>
+    <ul>
+            <li>
+                <span>工号</span>
+                <span class="dt" ng-bind="masterDetail.uid"></span>
+            </li>
+            <li>
+                <span>姓名</span>
+                <span class="dt" ng-bind="masterDetail.realname"></span>
+            </li>
+            <li>
+                <span>电话</span>
+                <span class="dt" ng-bind="masterDetail.phone"></span>
+            </li>
+            <li>
+                <span>服务类型</span>
+                <span class="dt add_apply_type">
+                    <!--<dl ng-repeat="item in masterDetail.serviceArray"><dt>{{item.nameOne}}</dt><dt class="dd">{{item.name}}</dt></dl>-->
+                    <div class="add_apply_type_row" ng-repeat="item in masterDetail.serviceArray">
+                        <h4>{{item.name}} <p>展开<i class="vertical_middle to_bottom_icon"></i></p></h4>
+                        <div class="add_apply_type_list" data-id="{{item.id}}">
+                            <span  ng-repeat="opt in item.list" data-id="{{opt.id}}">{{opt.name}}</span>
+                        </div>
+                    </div>
+                </span>
+            </li>
+            <li>
+                <span>服务城市</span>
+                <span class="dt" ng-bind="masterDetail.city_name"></span>
+            </li>
+        </ul>
+    <p>服务评价<a ng-href="#/servieDetail?id={{masterDetail.uid}}">查看更多</a></p>
+    <div class="service_pj">
+         <div class="service_pj_left">
+             <p class="star_score">
+                 <i ng-repeat="item in masterDetail.starList track by $index" ng-class="item"></i>
+             </p>
+              <div class="grade"><span>综合：</span><span>{{masterDetail.comment.avg_star}}分</span></div>
+         </div>
+         <div class="service_pj_right">
+              <p ng-bind="masterDetail.comment.content"></p>
+             <div class="stars">
+                 <p class="star_score">
+                     <i ng-repeat="item in masterDetail.starList track by $index" ng-class="item"></i>
+                 </p>
+             </div>
+         </div>
+    </div>
+</div>

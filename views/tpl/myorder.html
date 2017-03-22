@@ -1,0 +1,48 @@
+<div class="myorder" popup-wrap>
+    <div class="myorder_header">
+        <div ng-click="changeTab(1)"><span><dl>待服务</dl><em ng-show="selecTabIndex==1"></em></span></div>
+        <div ng-click="changeTab(2)"><span><dl>待支付</dl><em ng-show="selecTabIndex==2"></em></span></div>
+        <div ng-click="changeTab(3)"><span><dl>已完成</dl><em ng-show="selecTabIndex==3"></em></span></div>
+        <div ng-click="changeTab(0)"><span><dl>全部</dl><em ng-show="selecTabIndex==0"></em></span></div>
+    </div>
+    <div class="select">
+        <div class="message" ng-repeat= "item in array_a">
+            <p class="clearfix"><span class="left">下单时间</span><span class="left">{{item.createtime }}</span><span>{{item.status}}</span></p>
+            <div class="master_order_detail">
+                <a ng-href="#/bespokeOrder?id={{item.id}}">
+                    <ul>
+                        <li>
+                            <span>预约时间</span>
+                            <span class="dt">{{item.time}}</span>
+                        </li>
+                        <li>
+                            <span>服务类别</span>
+                            <span class="dt">{{item.category_names}}</span>
+                        </li>
+                        <li>
+                            <span>服务地址</span>
+                            <div class="dt">
+                                <p ng-bind="item.address.address"></p>
+                                <p ng-bind="item.address.detail"></p>
+                            </div>
+                        </li>
+                    </ul>
+                </a>
+
+                <div class="canorder clearfix">
+                    <a ng-href="#/cancle?id={{item.id}}" ng-show="item.order_btn_display == 0 || item.order_btn_display == 1">取消订单</a>
+                    <a ng-href="#/canclepay?id={{item.id}}" ng-show="item.order_btn_display == 2">取消订单</a>
+                    <a ng-href="#/payway?id={{item.id}}" ng-show="item.order_btn_display == 3">去支付</a>
+                    <a ng-href="#/orderevaluate?id={{item.id}}" ng-show="item.order_btn_display == 4">去评价</a>
+                    <a ng-href="#/" ng-show="item.order_btn_display == 5 || item.order_btn_display == 6">再次下单</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="master_order_cancle" ng-show="isLoadDisplay">
+        <a href="javascript:;" ng-bind="loadText" ng-click="loadingFn()">加载更多</a>
+    </div>
+    <div class="select" ng-show="noData">
+        <p class="noData"> 暂无订单 </p>
+    </div>
+</div>

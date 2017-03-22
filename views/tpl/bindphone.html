@@ -1,0 +1,10 @@
+<div class="bindphone">
+    <form action="" method="">
+        <ul>
+            <li><input type="number" name="phone" placeholder="请输入手机号码" class="numphone" ng-model="phone">
+            <span ng-click="time_out()" ng-disabled="button_disabled" >{{verifiticationCode}}</span></li>
+            <li><input type="number" name="yzm" placeholder="验证码" ng-model="captcha" class="phoneyzm"></li>
+        </ul>
+        <div class="sure_cancle" select><a href="javascript:;" ng-click="bindPhone()">确认绑定该新手机</a></div>
+    </form>
+</div>

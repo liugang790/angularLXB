@@ -1,0 +1,75 @@
+<div class="add_apply">
+    <form action="" id="addMaster" name="addMaster" enctype="multipart/form-data" method="post">
+        <ul class="add_apply_ul">
+            <li class="flex">
+                <h3>真实姓名</h3>
+                <p><input type="text" ng-model="realname" placeholder="真实姓名"></p>
+            </li>
+            <li class="flex">
+                <h3>证件号码</h3>
+                <p><input type="text" ng-model="card_number" placeholder="证件号码"></p>
+            </li>
+            <li class="box">
+                <h3>服务类型</h3>
+                <div class="add_apply_type">
+                    <div class="add_apply_type_row" ng-repeat="item in categoryList">
+                        <h4>{{item.name}} <p>展开<i class="vertical_middle to_bottom_icon"></i></p></h4>
+                        <div class="add_apply_type_list" data-id="{{item.id}}">
+                            <span  ng-repeat="opt in item.list" data-id="{{opt.id}}">{{opt.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="flex">
+                <h3>服务城市</h3>
+                <p class="select_apply_city">
+                    <select name="" ng-change="selectCity(item.id)" ng-model="selfCity_id" ng-options="item.id as item.name for item in cityList">
+                        <option value="" disabled>--请选择--</option>
+                    </select>
+                </p>
+            </li>
+            <li class="flex">
+                <h3>服务区域</h3>
+                <p class="select_apply_city">
+                    <select name="" ng-model="selfRegion_id" ng-options="item.id as item.name for item in selftCite_list">
+                        <option value="" disabled>--请选择--</option>
+                    </select>
+                </p>
+            </li>
+            <li class="flex">
+                <h3>服务地址</h3>
+                <p><a href="javascript:;" ng-bind="address" ng-click="displaySitus()">请选择</a></p>
+            </li>
+            <li class="flex add_apply_photo" apply-photo>
+                <div>
+                    <p><i class="add_img_icon"></i><img src="" alt=""><input type="file" name="id_cards_front" data-index="1" id="apply_photo_1"></p><h4>身份证正面</h4>
+                </div>
+                <div>
+                    <p><i class="add_img_icon"></i><img src="" alt=""><input type="file" name="id_cards_back" data-index="2" id="apply_photo_2"></p><h4>身份证背面</h4>
+                </div>
+                <div>
+                    <p><i class="add_img_icon"></i><img src="" alt=""><input type="file" name="hand_papers" data-index="3" id="apply_photo_3"></p><h4>手持证件照</h4>
+                </div>
+                <div>
+                    <p><i class="add_img_icon"></i><img src="" alt=""><input type="file" name="job_papers" data-index="4" id="apply_photo_4"></p><h4>从业资格证</h4>
+                </div>
+            </li>
+        </ul>
+        <div class="center mg_05"><a href="javascript:;" class="sureBtn" ng-click="masterSubmit()">提交申请</a></div>
+    </form>
+</div>
+<div class="add_apply_situs">
+    <div class="select_situs">
+        <div class="situs_search flex">
+            <div class="situs_search_row">
+                <i class="search_icon"></i>
+                <input type="text" class="search_addr" id="suggestId" ng-model="search_val" size="20" ng-change="searchBtn()" placeholder="搜索" value=""/>
+                <i class="cancel_search" ng-click="cancelSearch()"></i>
+            </div>
+            <a href="javascript:;" ng-click="backBtn()">返回</a>
+        </div>
+        <div class="situs_wrap">
+            <h2>暂无搜索内容</h2>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="clearfix service_row">
+    <div class="service_left" service-left>
+        <div class="swiper-container">
+            <div class="swiper-wrapper swiper_wrapper_first">
+                <div class="swiper-slide" ng-repeat="item in selfCategoryList" ng-click="swiperSlide()">{{item.name}}</div>
+                <!--<div class="swiper-slide">电视维修</div>-->
+            </div>
+        </div>
+    </div>
+    <div class="service_right">
+        <ul class="service_details_ul service_details_first" select-type>
+            <li class="flex" ng-repeat="item in selfSelectDetails" ng-click="serverSmFn()">
+                <p>{{item.name}}</p>
+                <p><em>¥ {{item.price}}</em></p>
+            </li>
+        </ul>
+        <div class="service_sm">服务说明</div>
+        <p class="content" string-html="selfServerSm"></p>
+    </div>
+</div>
+<div class="active_footer"><a href="javascript:;" ng-click="toAddOrder()" class="sureBtn">确认</a></div>

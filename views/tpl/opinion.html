@@ -1,0 +1,12 @@
+<div class="opinion">
+    <div class="opinion_title box">
+        <p>反馈标题</p>
+        <p><input type="text" placeholder="请输入意见反馈标题" ng-model="title" value=""></p>
+    </div>
+    <div class="opinion_content box">
+        <p>反馈内容</p>
+        <p><textarea placeholder="请输入反馈详细内容" ng-model="content" value="" ng-disabled="disabled" maxlength="500"></textarea></p>
+    </div>
+    <p class="opinion_text_number">剩余<span ng-bind="number()">{{number}}</span>字</p>
+</div>
+<div class="opinion_btn"><a href="javascript:;" class="sureBtn" ng-click="submit()" ng-disabled="disabled">确认提交</a></div> 

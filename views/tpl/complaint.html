@@ -1,0 +1,11 @@
+<div class="complaint">
+    <ul>
+        <li><label>单号</label><input  type="text" name="num" ng-model="orderId" disabled></li>
+        <li><label>投诉标题</label><input  type="text" name="title" placeholder="请输入投诉原因标题" ng-model="title"></li>
+        <li>
+            <label>投诉内容</label><textarea  name="mess" placeholder="请输入投诉详细内容" maxlength="500" ng-model="content"></textarea>
+        </li>
+        <p>剩余<span ng-bind="number()">{{number}}</span>字</p>
+    </ul>
+    <div class="sure_cancle"><a href="javascript:;" ng-click="sendFn()">确认发起投诉</a></div>
+</div>

@@ -1,0 +1,61 @@
+<div class="add_apply">
+    <ul class="add_apply_ul">
+        <li class="flex">
+            <h3>真实姓名</h3>
+            <p>{{masterDetail.realname}}</p>
+        </li>
+        <li class="flex">
+            <h3>证件号码</h3>
+            <p>{{masterDetail.card_number}}</p>
+        </li>
+        <li class="box">
+            <h3>服务类型</h3>
+            <div class="add_apply_type">
+                <div class="add_apply_type_row" ng-repeat="item in masterDetail.serviceArray">
+                    <h4>{{item.name}} <p>展开<i class="vertical_middle to_bottom_icon"></i></p></h4>
+                    <div class="add_apply_type_list">
+                        <span ng-repeat="opt in item.list">{{opt.name}}</span>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="flex">
+            <h3>服务城市</h3>
+            <p>{{masterDetail.city_name}}</p>
+        </li>
+        <li class="flex">
+            <h3>服务地址</h3>
+            <p>{{masterDetail.address}}</p>
+        </li>
+        <li class="flex add_apply_photo">
+            <div>
+                <p><img ng-src="{{masterDetail.id_cards_front}}" alt="身份证正面"></p><h4>身份证正面</h4>
+            </div>
+            <div>
+                <p><img ng-src="{{masterDetail.id_cards_back}}" alt="身份证背面"></p><h4>身份证背面</h4>
+            </div>
+            <div>
+                <p><img ng-src="{{masterDetail.hand_papers}}" alt="手持证件照"></p><h4>手持证件照</h4>
+            </div>
+            <div>
+                <p><img ng-src="{{masterDetail.job_papers}}" alt="从业资格证"></p><h4>从业资格证</h4>
+            </div>
+        </li>
+        <li class="master_status_wrap flex">
+            <div class="master_status_left">
+                <p>{{masterDetail.is_audit}}</p>
+                <p>{{masterDetail.time_detail}}</p>
+                <p>初始登录密码: 无</p>
+            </div>
+            <div class="master_status_right">
+                <a href="http://www.shuaixiubang.com">
+                    <p class="center"><img ng-src="/weixin/images/masterApp.png" alt="" width="60%"></p>
+                    <p class="center">师傅端APP下载</p>
+                </a>
+            </div>
+        </li>
+    </ul>
+    <p class="center mg_05" ng-show="is_defailt">
+        <a href="#/addApply" ng-click="setApplyPhone()" class="sureBtn">重新认证</a>
+    </p>
+</div>

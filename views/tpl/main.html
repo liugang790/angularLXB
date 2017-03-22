@@ -1,0 +1,23 @@
+<div class="banner" banner>
+    <div class="swiper-container" >
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" ng-repeat="item in banner"><a href="javascript:;"><img ng-src="{{item.image}}" alt=""></a></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<nav class="main_nav clearfix">
+    <a ng-href="#/serviceDetails?id={{item.id}}" ng-repeat="item in mainList" ng-click="test(this)">
+        <div class="main_img_row">
+            <img ng-src="{{item.logo}}" alt="家电维修">
+        </div>
+        <p>{{item.name}}</p>
+    </a>
+</nav>
+<div class="spinner" ng-show="isSpinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>

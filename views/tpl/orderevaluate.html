@@ -1,0 +1,37 @@
+<div class="orderevaluate">
+    <form action="" method="post" id="orderevaluate" enctype="multipart/form-data">
+        <div class="orderevaluate_mess">
+             <div class="orderevaluate_mess_header">
+                 <span><img ng-src="{{head}}"></span>
+                 <textarea name="text" placeholder="亲，您可在此输入对师傅的评价信息噢！最多可输入2000字符!" ng-model="content"></textarea>
+             </div>
+        </div>
+        <div class="orderevaluate_mess">
+            <section class="order_addImg_row addimg">
+                <div class="img_info">
+                    <p>上传服务图片评价信息(最多三张)</p>
+                </div>
+                <div class="img_content" add-img>
+                    <ul class="clearfix">
+                        <li class="add_img_btnRow">
+                            <i class="add_img_icon"></i>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class="service_stars">
+            <div>服务评星</div>
+            <div class="content_star" star>
+                <div class="star_score" star-score="0">
+                    <i index="1" status="1" class="star1"></i>
+                    <i index="2" status="1" class="star1"></i>
+                    <i index="3" status="1" class="star1"></i>
+                    <i index="4" status="1" class="star1"></i>
+                    <i index="5" status="1" class="star1"></i>
+                </div>
+            </div>
+        </div>
+        <div class="sure_cancle" select><a href="javascript:;" ng-click="SendService()" ng-bind="send_text">发表评价</a></div>
+    </form>
+</div>
