@@ -1,3 +1,3 @@
 #lxb
 
-该项目是一个angular
+该项目是一个angularjs框架项目
